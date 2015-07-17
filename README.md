@@ -37,6 +37,11 @@ Otherwise, for newer versions use systemd:
 ./install-systemd
 ```
 
+### Docker
+
+There's a `Dockerfile` ready to go. Need help running a Docker image with Go?
+Check out [the docs here](http://blog.golang.org/docker).
+
 ## Service Configuration
 
 ### Running
