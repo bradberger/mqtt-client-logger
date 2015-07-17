@@ -1,0 +1,5 @@
+- Comment the code
+- Save the messages in the database
+- Convert the OnConnect to channels to keep the program alive
+- Handle disconnects gracefully
+- Test authentication again

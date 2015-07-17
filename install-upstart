@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+if [ "$GOPATH" = "" ]; then
+    echo "You must set your \$GOPATH"
+    exit 1
+fi
+
+## Get all the packages.
+go get "git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.golang.git"
+go get "gopkg.in/gorp.v1"
+go get "gopkg.in/inconshreveable/log15.v2"
+go get "github.com/go-sql-driver/mysql"
+go get "gopkg.in/yaml.v2"
+
+sudo mkdir -p /etc/mqttlogger
+sudo cp ./conf/config.yml /etc/iotportal/mqttlogger/config.yml
+sudo cp ./conf/mqttlogger.conf /etc/init/mqttlogger.conf
+./build && sudo mv ./mqttlogger /usr/local/bin
+sudo service mqttlogger start

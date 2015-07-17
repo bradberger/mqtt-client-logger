@@ -1,0 +1,4 @@
+#!/bin/sh
+
+./format
+go build -o=mqttlogger *.go

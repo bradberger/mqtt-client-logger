@@ -1,0 +1,18 @@
+# Database settings.
+database:
+    host: localhost
+    user: root
+    pass: root
+    port: 3306
+    database: iotmqttlogger # Name of database
+    protocol: tcp # tcp or unix
+    connections: 10 # Max open connections. 0 or less than 0 is unlimited.
+
+# Where the server should bind itself to.
+listen: 127.0.0.1:3000
+
+# Any time duration string.
+# See https://golang.org/pkg/time/#ParseDuration
+interval: 10s
+
+loggerid: 1

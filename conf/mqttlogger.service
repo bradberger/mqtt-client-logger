@@ -1,0 +1,12 @@
+[Unit]
+Description=IoTPortal MQTT Client Logger
+
+[Service]
+ExecStart=/usr/local/bin/mqttlogger
+ExecReload=/usr/bin/killall mqttlogger
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=mqttlogger.service
